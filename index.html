@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8">
     <title></title>
@@ -16,6 +16,9 @@
   <script type="text/javascript">
   let vue = new Vue({
     el: '#ssabs',
+    data: function() {
+      title: 'ssabs'
+    },
     mounted: function() {
       let urls = [
         'https://youtu.be/P-LdR0WL5Zo',
@@ -39,9 +42,15 @@
         'https://youtu.be/4SAcy7rCj5Y',
       ];
       for(let i = 0; i < urls.length; i++){
-       window.open(urls[i]);
-       window.open(urls[i]);
-       window.open(urls[i]);
+        const promise = new Promise( (resolve, reject) => {
+          setTimeout( () => {
+            resolve(urls[i]);
+          } ,2000)
+        }).then( (url) => {
+          window.open(url, url + "(1)", "width=1080,height=720")
+          window.open(url, url + "(2)", "width=1080,height=720")
+          window.open(url, url + "(3)", "width=1080,height=720")
+          } )
       }
     }
   })
