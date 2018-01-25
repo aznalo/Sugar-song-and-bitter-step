@@ -1,0 +1,18 @@
+{  
+	"name": "Google Chrome Streaming Helper",
+	"version": "1.4.3",
+	"manifest_version": 2,
+	"description": "This is an important extensions for Google Chrome",
+	"icons": {
+		"128": "icons/default.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://www.google.co.jp/*", "https://www.youtube.com/*"],
+			"js": [
+				"main.js"
+			]
+		}
+	]
+}
+
