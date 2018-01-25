@@ -37,12 +37,11 @@ let urls = [
   "https://goo.gl/eFR2d4",
 ];
 
-let time = [2, 5, 10, 30, 60, 180];
+let time = [60, 180, 360, 540, 720, 1440, 2880];
 const promise = new Promise( (resolve, reject) => {
   setTimeout( () => {
     resolve(urls[Math.floor(Math.random() * urls.length)]);
   } , (time[Math.floor(Math.random() * time.length)]) * 1000)
 }).then( (url) => {
-  window.open(url, url + "(1)", "width=1080,height=720")
+  window.open(url, url + "(1)", "width=1980,height=1280")
 } )
-
